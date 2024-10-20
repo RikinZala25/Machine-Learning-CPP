@@ -1,4 +1,4 @@
-#include "knn.hpp"
+#include "../include/knn.hpp"
 #include <cmath>
 #include <limits>
 #include <map>
@@ -38,7 +38,7 @@ void knn::find_knearest(data *query_point){
             min = std::numeric_limits<double>::max();
         } else {
             for(int j = 0; j<training_data->size(); j++){
-                double distance = calculate_distance(query_point, training_data->at(j));
+                double distance = training_data->at(j)->get_distance();
                 if(distance < min && distance > previous_min){
                     min = distance;
                     index = j;
@@ -87,7 +87,7 @@ int knn::predict(){
         }
     }
 
-    delete neighbors;
+    neighbors->clear();
     return best;
 };
 

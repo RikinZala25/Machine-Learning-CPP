@@ -10,7 +10,7 @@ class data {
     uint8_t label;
     int enum_label; // A -> 1, B -> 2
     double distance;
-
+    
     public:
     data();
     ~data();
@@ -25,6 +25,7 @@ class data {
     uint8_t get_enumerated_label();
 
     std::vector<uint8_t> * get_feature_vector();
+    double get_distance();
 };
 
 #endif
