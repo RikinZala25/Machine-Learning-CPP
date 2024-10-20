@@ -130,6 +130,7 @@ std::vector<data *> * data_handler::get_validation_data(){
     return validation_data;
 };
 
+/*
 int main(){
     data_handler *dh = new data_handler();
     dh->read_feature_vector("./Data/train-images.idx3-ubyte");
@@ -139,3 +140,4 @@ int main(){
 
     return 0;
 }
+*/

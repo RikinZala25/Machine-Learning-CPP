@@ -1,7 +1,7 @@
 CC=g++
 INCLUDE_DIR := $(MNIST_ML_ROOT)/include
 SRC := $(MNIST_ML_ROOT)/src
-CFLAGS := -std=c++11 -g
+CFLAGS := -shared -std=c++11 -g
 LIB_DATA := libdata.dll
 
 all: $(LIB_DATA)
@@ -22,5 +22,5 @@ obj/data.o: $(SRC)/data.cc
 	$(CC) $(CFLAGS) -o obj/data.o -I$(INCLUDE_DIR) -c $(SRC)/data.cc
 
 clean:
-	-rmdir /S /Q $(MNIST_ML_ROOT)/lib
-	-rmdir /S /Q $(MNIST_ML_ROOT)/obj
+	rm -rf "$(MNIST_ML_ROOT)/lib"
+	rm -rf "$(MNIST_ML_ROOT)/obj"
